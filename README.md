@@ -25,7 +25,7 @@
     <a href="https://github.com/reevesba/keystrokebiometrics.xyz"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://keystrokebiometrics.xyz>View Demo</a>
+    <a href="https://keystrokebiometrics.xyz">View Demo</a>
     ·
     <a href="https://github.com/reevesba/keystrokebiometrics.xyz/issues">Report Bug</a>
     ·
