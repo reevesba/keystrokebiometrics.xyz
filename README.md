@@ -1,12 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -27,23 +18,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/reevesba/keystrokebiometrics.xyz">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Keystroke Biometrics Study</h3>
+  <h3 align="center">Keystroke Data Collector</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Collects keystroke data using the LAMP stack. 
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/reevesba/keystrokebiometrics.xyz"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://keystrokebiometrics.xyz>View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/reevesba/keystrokebiometrics.xyz/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/reevesba/keystrokebiometrics.xyz/issues">Request Feature</a>
   </p>
 </p>
 
