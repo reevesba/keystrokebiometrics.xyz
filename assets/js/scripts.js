@@ -171,6 +171,11 @@
         // Setup transmit data
         var uuid = select('#uuid').value;
         var isBot = select('#isbot').value;
+
+        if (isBot == null || isBot == "") {
+          isBot = 0;
+        }
+
         var altKey = event.altKey ? 1 : 0;
         var ctrlKey = event.ctrlKey ? 1 : 0;
         var shiftKey = event.shiftKey ? 1 : 0;
