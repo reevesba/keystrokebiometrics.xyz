@@ -17,10 +17,11 @@ $keyChar = $_POST['keyChar'];
 $altKey = $_POST['altKey'];
 $ctrlKey = $_POST['ctrlKey'];
 $shiftKey = $_POST['shiftKey'];
+$isBot = $_POST['isBot'];
 $timestamp = $_POST['timestamp'];
 
 // Insert data
-if (!mysqli_query($connection, "INSERT INTO KEYSTROKE_METRICS (`uuid`, `key_event`, `key_code`, `key_char`, `alt_key`, `ctrl_key`, `shift_key`, `timestamp`) VALUES ('$uuid', '$keyEvent', '$keyCode', '$keyChar', '$altKey', '$ctrlKey', '$shiftKey', '$timestamp')")) {
+if (!mysqli_query($connection, "INSERT INTO KEYSTROKE_METRICS (`uuid`, `key_event`, `key_code`, `key_char`, `alt_key`, `ctrl_key`, `shift_key`, `is_bot`, `timestamp`) VALUES ('$uuid', '$keyEvent', '$keyCode', '$keyChar', '$altKey', '$ctrlKey', '$shiftKey', '$isBot', '$timestamp')")) {
     echo("Error description: " . mysqli_error($connection));
 }
 

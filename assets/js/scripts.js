@@ -170,6 +170,7 @@
 
         // Setup transmit data
         var uuid = select('#uuid').value;
+        var isBot = select('#isbot').value;
         var altKey = event.altKey ? 1 : 0;
         var ctrlKey = event.ctrlKey ? 1 : 0;
         var shiftKey = event.shiftKey ? 1 : 0;
@@ -181,6 +182,7 @@
                    '&altKey=' + altKey + 
                    '&ctrlKey=' + ctrlKey + 
                    '&shiftKey=' + shiftKey + 
+                   '&isBot=' + isBot +
                    '&timestamp=' + new Date().getTime();
 
         // Uncomment to enable debugging
