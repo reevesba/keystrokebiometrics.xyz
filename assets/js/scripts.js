@@ -162,7 +162,9 @@
 
     const postData = (event) => {
         myString = event.srcElement.attributes[1].value;
-        sentence_id = myString.slice(-1);
+        sentence_id = myString[myString.length - 1];
+
+        console.log(myString)
         console.log(sentence_id)
 
         // Create request object
