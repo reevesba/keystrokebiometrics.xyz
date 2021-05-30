@@ -162,11 +162,12 @@
 
     const postData = (event) => {
         //console.log(event.srcElement.attributes[1].value);
-        var myString = event.srcElement.attributes[1].value;
-        //var sentence_id = myString.charAt(myString.length - 1);
+        var myString = String(event.srcElement.attributes[1].value);
+        var sentence_id = myString.charAt(myString.length - 1);
 
         console.log(typeof myString)
-        //console.log(sentence_id);
+        console.log(myString)
+        console.log(sentence_id)
 
         // Create request object
         if (window.XMLHttpRequest) {
