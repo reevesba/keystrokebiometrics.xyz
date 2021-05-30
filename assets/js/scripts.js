@@ -161,7 +161,7 @@
     const value = 'application/x-www-form-urlencoded';
 
     const postData = (event) => {
-        console.log(event);
+        console.log(event.srcElement.attributes[1].value);
         // Create request object
         if (window.XMLHttpRequest) {
             var request = new XMLHttpRequest();
