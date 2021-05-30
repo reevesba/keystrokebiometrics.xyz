@@ -165,7 +165,6 @@
         var myString = event.srcElement.attributes[1].value;
         var sentence_id = myString[myString.length - 1];
 
-        console.log(myString);
         console.log(sentence_id);
 
         // Create request object
