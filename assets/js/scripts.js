@@ -162,7 +162,7 @@
 
     const postData = (event) => {
         var myString = String(event.srcElement.attributes[1].value);
-        var sentence_id = myString.slice[-1];
+        var sentence_id = myString.slice(-1);
 
         console.log("type:")
         console.log(typeof myString)
