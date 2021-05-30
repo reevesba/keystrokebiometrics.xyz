@@ -162,8 +162,8 @@
 
     const postData = (event) => {
         console.log(event.srcElement.attributes[1].value);
-        myString = event.srcElement.attributes[1].value;
-        sentence_id = myString[myString.length - 1];
+        var myString = event.srcElement.attributes[1].value;
+        var sentence_id = myString[myString.length - 1];
 
         console.log(myString);
         console.log(sentence_id);
