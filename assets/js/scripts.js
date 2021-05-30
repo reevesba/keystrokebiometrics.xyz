@@ -161,6 +161,7 @@
     const value = 'application/x-www-form-urlencoded';
 
     const postData = (event) => {
+        console.log(event.srcElement.attributes[1].value);
         myString = event.srcElement.attributes[1].value;
         sentence_id = myString[myString.length - 1];
 
