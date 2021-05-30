@@ -183,7 +183,7 @@
         var shiftKey = event.shiftKey ? 1 : 0;
 
         var data = 'uuid=' + uuid + 
-                    'sentenceId=' + sentenceId +
+                   '&sentenceId=' + sentenceId +
                    '&keyEvent=' + event.type + 
                    '&keyCode=' + event.keyCode + 
                    '&keyChar=' + event.key + 
