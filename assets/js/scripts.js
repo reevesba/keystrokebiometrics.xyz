@@ -161,16 +161,6 @@
     const value = 'application/x-www-form-urlencoded';
 
     const postData = (event) => {
-        var myString = String(event.srcElement.attributes[1].value);
-        var sentence_id = myString.slice(-1);
-
-        console.log("type:")
-        console.log(typeof myString)
-        console.log("string")
-        console.log(myString)
-        console.log("id")
-        console.log(sentence_id)
-
         // Create request object
         if (window.XMLHttpRequest) {
             var request = new XMLHttpRequest();
@@ -179,6 +169,8 @@
         }
 
         // Setup transmit data
+        var inputName = String(event.srcElement.attributes[1].value);
+        var sentenceId = inputName.slice(-1);
         var uuid = select('#uuid').value;
         var isBot = select('#isbot').value;
 
@@ -191,6 +183,7 @@
         var shiftKey = event.shiftKey ? 1 : 0;
 
         var data = 'uuid=' + uuid + 
+                    'sentenceId=' + sentenceId +
                    '&keyEvent=' + event.type + 
                    '&keyCode=' + event.keyCode + 
                    '&keyChar=' + event.key + 

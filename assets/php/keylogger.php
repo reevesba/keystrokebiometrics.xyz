@@ -11,6 +11,7 @@ if (mysqli_connect_errno()) {
 
 // Collect post data
 $uuid = $_POST['uuid'];
+$sentence_id = $_POST['sentenceId'];
 $keyEvent = $_POST['keyEvent'];
 $keyCode = $_POST['keyCode'];
 $keyChar = $_POST['keyChar'];
@@ -21,7 +22,7 @@ $isBot = $_POST['isBot'];
 $timestamp = $_POST['timestamp'];
 
 // Insert data
-if (!mysqli_query($connection, "INSERT INTO KEYSTROKE_METRICS (`uuid`, `key_event`, `key_code`, `key_char`, `alt_key`, `ctrl_key`, `shift_key`, `is_bot`, `timestamp`) VALUES ('$uuid', '$keyEvent', '$keyCode', '$keyChar', '$altKey', '$ctrlKey', '$shiftKey', '$isBot', '$timestamp')")) {
+if (!mysqli_query($connection, "INSERT INTO KEYSTROKE_METRICS (`uuid`, `sentence_id`, `key_event`, `key_code`, `key_char`, `alt_key`, `ctrl_key`, `shift_key`, `is_bot`, `timestamp`) VALUES ('$uuid', '$sentence_id', '$keyEvent', '$keyCode', '$keyChar', '$altKey', '$ctrlKey', '$shiftKey', '$isBot', '$timestamp')")) {
     echo("Error description: " . mysqli_error($connection));
 }
 
