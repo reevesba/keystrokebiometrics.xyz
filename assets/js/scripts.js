@@ -164,8 +164,8 @@
         myString = event.srcElement.attributes[1].value;
         sentence_id = myString[myString.length - 1];
 
-        console.log(myString)
-        console.log(sentence_id)
+        console.log(myString);
+        console.log(sentence_id);
 
         // Create request object
         if (window.XMLHttpRequest) {
